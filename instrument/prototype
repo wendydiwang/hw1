@@ -1,1 +1,307 @@
 
+*/this is the instrument I made for digital electronic class,
+I use two different sensors: one distance sensor and one potentiometer.
+
+I use processing make some syllables and throuh differenct sensor values to recombine them.
+the music is from Yann Tiersen's - La valse d'Amelie.
+Enjoy */
+
+
+
+
+Arduino code:
+#define echoPin 8 // 
+#define trigPin 9 //
+int maximumRange = 200; // Maximum range needed
+int minimumRange = 0; // Minimum range needed
+long duration, distance; // Duration used to calculate distance
+
+
+void setup() {
+  // initialize the serial communication:
+  Serial.begin(9600);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+}
+void loop() {
+  Serial.print(analogRead(A0));
+  delay(1); // Wait after each analogRead()
+  Serial.print(',');
+  //  Serial.println(analogRead(A1));
+  //  delay(1); // Wait after each analogRead()
+
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+
+  digitalWrite(trigPin, LOW);
+  
+  duration = pulseIn(echoPin, HIGH);
+  //Calculate the distance (in cm) based on the speed of sound.
+ distance = duration/20;
+ 
+// if (distance >= maximumRange || distance <= minimumRange){
+// /* Send a negative number to computer and Turn LED ON 
+// to indicate "out of range" */
+// Serial.println("-1");
+// 
+// }
+// else {
+// /* Send the distance to the computer using Serial protocol, and
+// turn LED OFF to indicate successful reading. */
+ Serial.println(distance);
+
+ delay(2);
+ 
+ }
+ 
+// //Delay 50ms before next reading.
+// delay(20);}
+
+
+processing Code:
+
+
+import processing.serial.*;
+import ddf.minim.*;
+import ddf.minim.ugens.*;
+import ddf.minim.signals.*;
+
+
+
+Serial myPort;        // The serial port
+int xPos = 100;         // horizontal position of the graph
+float inByte = 0;
+
+float freq;           // sine wave frequency
+float amp; 
+float distance;
+
+Minim minim;
+AudioOutput out;
+//SineWave sine;
+
+class SineInstrument implements Instrument
+{
+  Oscil wave;
+  Line  ampEnv;
+
+  SineInstrument( float frequency )
+  {
+    wave   = new Oscil( frequency, 0, Waves.SINE );
+    ampEnv = new Line();
+    ampEnv.patch( wave.amplitude );
+  }
+
+  void noteOn( float duration )
+  {
+
+    ampEnv.activate( duration, 0.5f, 0 );
+    wave.patch( out );
+  }
+
+  void noteOff()
+  {
+    wave.unpatch( out );
+  }
+}
+
+
+void setup () {
+  myPort = new Serial(this, Serial.list()[1], 9600);
+  myPort.bufferUntil('\n');
+  minim = new Minim(this);
+  out = minim.getLineOut(Minim.STEREO);
+}
+
+
+void draw () {
+
+  println(distance);
+  println(amp);
+  smooth();
+
+  if (distance>10 && distance<50)
+  {
+    Song1();
+    smooth();
+  }
+
+
+  if (distance>50 && distance<80)
+  {
+    Song2();
+    smooth();
+  }
+
+  if (distance>80 && distance<120)
+  {
+    Song3();
+    smooth();
+  }
+
+  if (distance>120 && distance<200)
+  {
+    Song4();
+    smooth();
+  }
+
+
+  if (amp>1 && amp<3)
+  {
+    Rhythm1();
+    smooth();
+  }
+
+
+  if (amp>3 && amp<5)
+  {
+    Rhythm2();
+    smooth();
+  }
+
+  if (amp>5 && amp<8)
+  {
+    Rhythm3();
+    smooth();
+  }
+
+  if (amp>8 && amp<10)
+  {
+    Rhythm4();
+    smooth();
+  }
+
+  //Song2();
+
+  //Song3();
+  //Song4();
+  //Rhythm1();
+  //Rhythm2();
+  //Rhythm3();
+  //Rhythm4();
+}
+
+
+
+void serialEvent (Serial myPort) {
+  String inString = myPort.readStringUntil('\n');
+  if (inString != null) {
+    inString = trim(inString);
+    int sensors[] = int(split(inString, ','));
+    if (sensors.length == 2) {
+      amp = map(sensors[0], 0, 1023, 0, 10);
+      distance = map(sensors[1], 0, 500, 10, 200);
+    }
+  }
+}
+
+
+void Song1() {
+  out.playNote( 1.0, 1.2, new SineInstrument( Frequency.ofPitch( "D6" ).asHz() ) );
+  out.playNote( 1.0, 1.2, new SineInstrument( Frequency.ofPitch( "D5" ).asHz() ) );
+
+  out.playNote( 2.0, 0.5, new SineInstrument( Frequency.ofPitch( "C6" ).asHz() ) );
+  out.playNote( 2.0, 0.5, new SineInstrument( Frequency.ofPitch( "C5" ).asHz() ) );
+
+  out.playNote( 2.3, 1.0, new SineInstrument( Frequency.ofPitch( "B5" ).asHz() ) );
+  out.playNote( 2.3, 1.0, new SineInstrument( Frequency.ofPitch( "B4" ).asHz() ) );
+
+
+  out.playNote( 3.0, 1.0, new SineInstrument( Frequency.ofPitch( "A5" ).asHz() ) );
+  out.playNote( 3.0, 1.0, new SineInstrument( Frequency.ofPitch( "A4" ).asHz() ) );
+  
+  delay(500);
+}
+
+void Song2() {
+  out.playNote( 3.8, 1.2, new SineInstrument( Frequency.ofPitch( "D6" ).asHz() ) );
+  out.playNote( 3.8, 1.2, new SineInstrument( Frequency.ofPitch( "D5" ).asHz() ) );
+
+
+  out.playNote( 4.8, 0.3, new SineInstrument( Frequency.ofPitch( "E6" ).asHz() ) );
+  out.playNote( 5.0, 0.3, new SineInstrument( Frequency.ofPitch( "D6" ).asHz() ) );
+  out.playNote( 5.2, 0.3, new SineInstrument( Frequency.ofPitch( "C6" ).asHz() ) );
+  out.playNote( 5.4, 0.3, new SineInstrument( Frequency.ofPitch( "D6" ).asHz() ) );
+  out.playNote( 5.6, 0.3, new SineInstrument( Frequency.ofPitch( "C6" ).asHz() ) );
+
+
+  out.playNote( 5.8, 0.9, new SineInstrument( Frequency.ofPitch( "B5" ).asHz() ) );
+  out.playNote( 5.8, 0.9, new SineInstrument( Frequency.ofPitch( "B4" ).asHz() ) );
+
+
+  out.playNote( 6.5, 1.2, new SineInstrument( Frequency.ofPitch( "A5" ).asHz() ) );
+  out.playNote( 6.5, 1.2, new SineInstrument( Frequency.ofPitch( "A4" ).asHz() ) );
+  delay(500);
+}
+
+void Song3() {
+
+  out.playNote( 7.3, 0.9, new SineInstrument( Frequency.ofPitch( "C6" ).asHz() ) );
+  out.playNote( 7.3, 0.9, new SineInstrument( Frequency.ofPitch( "C5" ).asHz() ) );
+
+
+  out.playNote( 8.5, 0.5, new SineInstrument( Frequency.ofPitch( "B5" ).asHz() ) );
+  out.playNote( 8.5, 0.5, new SineInstrument( Frequency.ofPitch( "B4" ).asHz() ) );
+
+  out.playNote( 9.0, 1.2, new SineInstrument( Frequency.ofPitch( "E5" ).asHz() ) );
+  out.playNote( 9.0, 1.2, new SineInstrument( Frequency.ofPitch( "E4" ).asHz() ) );
+  delay(500);
+}
+
+void Song4() {
+  out.playNote( 10.2, 1.0, new SineInstrument( Frequency.ofPitch( "C6" ).asHz() ) );
+  out.playNote( 10.2, 1.0, new SineInstrument( Frequency.ofPitch( "C5" ).asHz() ) );
+
+  out.playNote( 10.8, 0.3, new SineInstrument( Frequency.ofPitch( "D6" ).asHz() ) );
+  out.playNote( 11.0, 0.3, new SineInstrument( Frequency.ofPitch( "C6" ).asHz() ) );
+  out.playNote( 11.2, 0.3, new SineInstrument( Frequency.ofPitch( "B5" ).asHz() ) );
+  out.playNote( 11.4, 0.3, new SineInstrument( Frequency.ofPitch( "C6" ).asHz() ) );
+  out.playNote( 11.6, 0.3, new SineInstrument( Frequency.ofPitch( "B5" ).asHz() ) );
+
+  out.playNote( 11.8, 0.9, new SineInstrument( Frequency.ofPitch( "E5" ).asHz() ) );
+  out.playNote( 11.9, 0.9, new SineInstrument( Frequency.ofPitch( "E6" ).asHz() ) );
+  out.playNote( 12.0, 0.9, new SineInstrument( Frequency.ofPitch( "E4" ).asHz() ) );
+  delay(500);
+}
+
+
+
+void Rhythm1() {
+  out.playNote( 3.8, 1.2, new SineInstrument( Frequency.ofPitch( "D4" ).asHz() ) );
+
+  out.playNote( 4.5, 1.5, new SineInstrument( Frequency.ofPitch( "C4" ).asHz() ) );
+  out.playNote( 4.5, 1.5, new SineInstrument( Frequency.ofPitch( "E4" ).asHz() ) );
+  out.playNote( 4.5, 1.5, new SineInstrument( Frequency.ofPitch( "A4" ).asHz() ) );
+  delay(50);
+}
+
+void Rhythm2() {
+
+  out.playNote( 5.6, 1.2, new SineInstrument( Frequency.ofPitch( "A3" ).asHz() ) );
+
+  out.playNote( 6.5, 1.5, new SineInstrument( Frequency.ofPitch( "C4" ).asHz() ) );
+  out.playNote( 6.5, 1.5, new SineInstrument( Frequency.ofPitch( "E4" ).asHz() ) );
+  out.playNote( 6.5, 1.5, new SineInstrument( Frequency.ofPitch( "A4" ).asHz() ) );
+  delay(500);
+}
+
+void Rhythm3() {
+  out.playNote( 7.3, 0.9, new SineInstrument( Frequency.ofPitch( "F4" ).asHz() ) );
+
+  out.playNote( 8.0, 0.9, new SineInstrument( Frequency.ofPitch( "A4" ).asHz() ) );
+  out.playNote( 8.0, 0.9, new SineInstrument( Frequency.ofPitch( "C5" ).asHz() ) );
+  delay(500);
+}
+
+void Rhythm4() {
+  out.playNote( 9.0, 1.2, new SineInstrument( Frequency.ofPitch( "C4" ).asHz() ) );
+
+  out.playNote( 9.7, 1.2, new SineInstrument( Frequency.ofPitch( "E4" ).asHz() ) );
+  out.playNote( 9.7, 1.2, new SineInstrument( Frequency.ofPitch( "G4" ).asHz() ) );
+  out.playNote( 9.7, 1.2, new SineInstrument( Frequency.ofPitch( "C5" ).asHz() ) );
+  delay(500);
+}
+
