@@ -192,13 +192,16 @@ void serialEvent (Serial myPort) {
     inString = trim(inString);
     int sensors[] = int(split(inString, ','));
     if (sensors.length == 2) {
+    //2 sensors
       amp = map(sensors[0], 0, 1023, 0, 10);
       distance = map(sensors[1], 0, 500, 10, 200);
+      // this is the code that map the two sensor values.
     }
   }
 }
 
-
+// here I worte the sllables on the right hand. it has 4 parts.
+//put delay() in the end of the code incase it has crazy loop sound when I draw them.
 void Song1() {
   out.playNote( 1.0, 1.2, new SineInstrument( Frequency.ofPitch( "D6" ).asHz() ) );
   out.playNote( 1.0, 1.2, new SineInstrument( Frequency.ofPitch( "D5" ).asHz() ) );
@@ -268,7 +271,7 @@ void Song4() {
 }
 
 
-
+// here I worte the sllables on the left hand. it has 4 parts.
 void Rhythm1() {
   out.playNote( 3.8, 1.2, new SineInstrument( Frequency.ofPitch( "D4" ).asHz() ) );
 
