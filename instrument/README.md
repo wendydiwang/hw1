@@ -1,3 +1,9 @@
+this is the instrument I made for digital electronic class,
+I use two different sensors: one distance sensor and one potentiometer.
+
+I use processing make some syllables and throuh differenct sensor values to recombine them.
+the music is from Yann Tiersen's - La valse d'Amelie.
+Enjoy 
 
 1.Draw a sketch of your instrument.
 
