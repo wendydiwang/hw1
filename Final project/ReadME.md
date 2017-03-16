@@ -6,6 +6,9 @@ I need to buld a small scale of the city with lights that contraled by light res
 Ideally I will also need a display to show the data that from those sensors. For the data, I need to design the visualization to reflect the traffic.The scale of the city will be based on CCA SF campus in 5 blocks, included freeways, living neighborhood and working neighborhood.
 Showing here: 
    <img width="989" alt="screen shot 2017-03-15 at 22 42 37" src="https://cloud.githubusercontent.com/assets/22774491/23984408/a630db2a-09d6-11e7-9ff0-5139b348945b.png">
+   
+   and this:
+   ![img_5748](https://cloud.githubusercontent.com/assets/22774491/23984676/09266dc0-09d8-11e7-924b-8d67c1c95c69.jpg)
 
 
  I have 6 weeks and 5 classes for this project before it's due.(April 27)
