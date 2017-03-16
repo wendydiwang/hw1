@@ -12,28 +12,28 @@ Showing here:
  I have 6 weeks and 5 classes for this project before it's due.(April 27)
  the next week 
  
- # Thursday, March 16, 2017
-# Start working: Research, mock-ups, test ideas and concepts.
+ ### Thursday, March 16, 2017
+#### Start working: Research, mock-ups, test ideas and concepts.
  
-# Research:
+#### Research:
  1.Find the code for arduino that make multiple tasks.
  2.Related sensors and order it.
  (I have 5 distance sensors and 10 light resistors, if every block need 4 lights I will need 100 sensors. if every sensor control 4 lights I will need 20 sensors....so expensive! ). 
  3.The material I may use. 
  
-# Mock-ups:
+#### Mock-ups:
  test with 10 lights on 5 senses, see how is the effect.
  
  Decide the size of this prototype. 
  
  
-   # similar project:
+   #### similar project:
  
  ![street-lights-project-web](https://cloud.githubusercontent.com/assets/22774491/23984647/d9a99f72-09d7-11e7-9391-2676abcadb9d.jpg)
 (http://sigmatechnology.se/news/new-iot-traffic-light-system-will-save-energy-and-increase-traffic-awareness-on-the-swedish-roads/)
  
 
-   # and this:
+   #### and this:
    ![img_5748](https://cloud.githubusercontent.com/assets/22774491/23984676/09266dc0-09d8-11e7-924b-8d67c1c95c69.jpg)
    (I forgot the link of this  image ... it's not mine anyway.)
 
