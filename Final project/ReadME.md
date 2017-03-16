@@ -7,8 +7,6 @@ Ideally I will also need a display to show the data that from those sensors. For
 Showing here: 
    <img width="989" alt="screen shot 2017-03-15 at 22 42 37" src="https://cloud.githubusercontent.com/assets/22774491/23984408/a630db2a-09d6-11e7-9ff0-5139b348945b.png">
    
-   and this:
-   ![img_5748](https://cloud.githubusercontent.com/assets/22774491/23984676/09266dc0-09d8-11e7-924b-8d67c1c95c69.jpg)
 
 
  I have 6 weeks and 5 classes for this project before it's due.(April 27)
@@ -26,9 +24,12 @@ Research:
  similar project:
  
  ![street-lights-project-web](https://cloud.githubusercontent.com/assets/22774491/23984647/d9a99f72-09d7-11e7-9391-2676abcadb9d.jpg)
+(http://sigmatechnology.se/news/new-iot-traffic-light-system-will-save-energy-and-increase-traffic-awareness-on-the-swedish-roads/)
+ 
+  and this:
+   ![img_5748](https://cloud.githubusercontent.com/assets/22774491/23984676/09266dc0-09d8-11e7-924b-8d67c1c95c69.jpg)
+   (I forgot the link of this  image ... it's not mine anyway.)
 
- 
- 
  
  
  
