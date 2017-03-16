@@ -20,6 +20,16 @@ Research:
  (I have 5 distance sensors and 10 light resistors, if every block need 4 lights I will need 100 sensors. if every sensor control 4 lights I will need 20 sensors....so expensive! ). 
  3.The material I may use.
  
+ similar project:
+ 
+ ![street-lights-project-web](https://cloud.githubusercontent.com/assets/22774491/23984647/d9a99f72-09d7-11e7-9391-2676abcadb9d.jpg)
+
+ 
+ 
+ 
+ 
+ 
+ 
  mock-ups:
  test with 10 lights on 5 senses, see how is the effect.
  
