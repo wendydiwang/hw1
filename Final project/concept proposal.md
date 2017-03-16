@@ -1,12 +1,19 @@
 ## This is my concept proposal for the final project.
 
-I am planning to build a prototype of the interactive lighting system at a city on a small scale.
+I am planning to build a prototype of the interactive lighting system at a city on a small scale. 
+see the project here: http://www.wendydiwang.com/new-page
+
+
 The lights will change the brightness when it detects a moving thing coming by. the closer the brighter, the farter the daker.
 I need to buld a small scale of the city with lights that contraled by  light resistor, distance sensor and interactived with  mini cars.
 Ideally I will also need a display to show the data that from those sensors. For the data, I need to design the visualization to reflect the traffic.The scale of the city will be based on CCA SF campus in 5 blocks, included freeways, living neighborhood and working neighborhood.
 Showing here: 
    <img width="989" alt="screen shot 2017-03-15 at 22 42 37" src="https://cloud.githubusercontent.com/assets/22774491/23984408/a630db2a-09d6-11e7-9ff0-5139b348945b.png">
    
+   ### the effect:
+   <img width="1010" alt="1" src="https://cloud.githubusercontent.com/assets/22774491/24017658/16344a84-0a4e-11e7-9c69-18a5b427df2e.png">
+   ### the effect:
+   <img width="1057" alt="2" src="https://cloud.githubusercontent.com/assets/22774491/24017673/2a961584-0a4e-11e7-9339-17a71cf25c65.png">
 
 
  I have 6 weeks and 5 classes for this project before it's due.(April 27)
