@@ -5,3 +5,33 @@ The lights will change the brightness when it detects a moving thing coming by. 
 I need to buld a small scale of the city with lights that contraled by light resistor, distance sensor and interactived with mini cars.
 Ideally I will also need a display to show the data that from those sensors. For the data, I need to design the visualization to reflect the traffic.The scale of the city will be based on CCA SF campus in 5 blocks, included freeways, living neighborhood and working neighborhood.
 
+ I have 6 weeks and 5 classes for this project before it's due.(April 27)
+ the next week 
+ 
+ Thursday, March 16, 2017
+ Start working: Research, mock-ups, test ideas and concepts
+Research:
+ 1.Find the code for arduino that make multiple tasks
+ 2.Related sensors and order it.
+ (I have 5 distance sensors and 10 light resistors, if every block need 4 lights I will need 100 sensors. if every sensor control 4 lights I will need 20 sensors....so expensive! ). 
+ 3.The material I may use.
+ 
+ mock-ups:
+ test with 10 lights on 5 senses, see how is the effect.
+ 
+ Decide the size of this prototype. 
+ 
+ Spring Break: Thursday, March 22, 2017
+ Research, build mock-ups, test ideas and concepts
+ 
+ Thursday, March 30, 
+ test, repair, iterate. make working mock-up
+
+ Thursday, April 6, 2017
+ Debug and refine mockup, start on prototype
+ 
+ Thursday, April 13, 2017 
+ Passover: work week
+
+ Thursday, April 21, 2017
+ The last class to refine it.
