@@ -5,8 +5,9 @@ see the project here: http://www.wendydiwang.com/new-page
 
 
 The lights will change the brightness when it detects a moving thing coming by. the closer the brighter, the farter the daker.
-I need to buld a small scale of the city with lights that contraled by  light resistor, distance sensor and interactived with  mini cars.
+I need to buld a small scale of the city with lights that contraled by  light resistor, distance sensor and interactived with mini cars.
 Ideally I will also need a display to show the data that from those sensors. For the data, I need to design the visualization to reflect the traffic.The scale of the city will be based on CCA SF campus in 5 blocks, included freeways, living neighborhood and working neighborhood.
+
 Showing here: 
    <img width="989" alt="screen shot 2017-03-15 at 22 42 37" src="https://cloud.githubusercontent.com/assets/22774491/23984408/a630db2a-09d6-11e7-9ff0-5139b348945b.png">
    
