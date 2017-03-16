@@ -1,4 +1,4 @@
-This is my concept proposal for the final project.
+## This is my concept proposal for the final project.
 
 I am planning to build a prototype of the interactive lighting system at a city on a small scale.
 The lights will change the brightness when it detects a moving thing coming by. the closer the brighter, the farter the daker.
