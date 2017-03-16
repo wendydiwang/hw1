@@ -9,9 +9,10 @@ Ideally I will also need a display to show the data that from those sensors. For
  the next week 
  
  Thursday, March 16, 2017
- Start working: Research, mock-ups, test ideas and concepts
+ Start working: Research, mock-ups, test ideas and concepts.
+ 
 Research:
- 1.Find the code for arduino that make multiple tasks
+ 1.Find the code for arduino that make multiple tasks.
  2.Related sensors and order it.
  (I have 5 distance sensors and 10 light resistors, if every block need 4 lights I will need 100 sensors. if every sensor control 4 lights I will need 20 sensors....so expensive! ). 
  3.The material I may use.
