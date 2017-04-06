@@ -56,9 +56,10 @@ Showing here:
  Research, build mock-ups, test ideas and concepts
  
  Thursday, March 30, 
- test, repair, iterate. make working mock-up
+### test, repair, iterate. make working mock-up
  
- int currentBrightness = 55;
+## test code
+int currentBrightness = 55;
 int newBrightness = currentBrightness;
 int fadeSpeed = 1;
 
@@ -106,11 +107,11 @@ void loop() {
   //delay(10);
 }
 
- Thursday, April 6, 2017
+ ### Thursday, April 6, 2017
  Debug and refine mockup, start on prototype
  
- Thursday, April 13, 2017 
+ ### Thursday, April 13, 2017 
  Passover: work week
 
- Thursday, April 21, 2017
+ ### Thursday, April 21, 2017
  The last class to refine it.
