@@ -57,6 +57,54 @@ Showing here:
  
  Thursday, March 30, 
  test, repair, iterate. make working mock-up
+ 
+ int currentBrightness = 55;
+int newBrightness = currentBrightness;
+int fadeSpeed = 1;
+
+
+void setup() {
+  // put your setup code here, to run once:
+
+  Serial.begin(9600);
+
+  analogWrite(9, currentBrightness);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+  // Read the sensor valure
+  int sensorVal = analogRead(0);
+
+  Serial.println(sensorVal);
+
+  // Cheching the distance and adjusting the new value to fade to
+  if (sensorVal > 350) {
+    newBrightness = 255;
+  }
+  else {
+    newBrightness = 55;
+  }
+
+
+
+  //adjusting the current brightness based on what direction it should go in
+  if (newBrightness > currentBrightness) {
+    currentBrightness = currentBrightness + fadeSpeed;
+  }
+  else if (newBrightness < currentBrightness){
+    currentBrightness = currentBrightness - fadeSpeed;
+  }
+
+
+  // Writes the brightness value to the LED
+  analogWrite(9, currentBrightness);
+
+
+  //delay(10);
+}
 
  Thursday, April 6, 2017
  Debug and refine mockup, start on prototype
