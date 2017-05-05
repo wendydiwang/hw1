@@ -1,6 +1,4 @@
-
-
-##audrino code:
+## audrino code:
 
 //sensor1
 #define echoPin1 12// 
