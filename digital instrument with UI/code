@@ -1,6 +1,6 @@
 
 
-audrino code:
+##audrino code:
 
 //sensor1
 #define echoPin1 12// 
@@ -90,8 +90,8 @@ void loop() {
   }
 
 
-processing code:
-part1 :
+##processing code:
+####part1 :
 //original visual code by Raven Kwok aka Guo, Ruiwen, Jerome Herr, p5art.tumblr.com, modified by Wendy Di Wang
 //arduino//
 
@@ -434,8 +434,8 @@ void Rhythm7() {
 }
 
 
-part2
-classes:
+####part2
+####classes:
 
 import processing.serial.*;
 import ddf.minim.*;
