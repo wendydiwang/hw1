@@ -27,6 +27,4 @@ Otherwise, it could be influenced by the environment too much, the effect of the
 
 <img width="718" alt="screen shot 2017-05-08 at 03 06 23" src="https://cloud.githubusercontent.com/assets/22774491/25799802/61c70c54-339b-11e7-9179-6eecd6f8f188.png">
 
-<img width="637" alt="screen shot 2017-05-08 at 02 51 52" src="https://cloud.githubusercontent.com/assets/22774491/25799804/61f89972-339b-11e7-91b2-20071ee92b42.png">
-![img_5840](https://cloud.githubusercontent.com/assets/22774491/25799899/d351384a-339b-11e7-9b1f-f4f126c9c951.JPG)
-
+<img width="678" alt="screen shot 2017-05-08 at 03 47 26" src="https://cloud.githubusercontent.com/assets/22774491/25801104/1c92a868-33a1-11e7-91f4-788b14a80bf6.png">
