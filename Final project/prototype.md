@@ -7,7 +7,8 @@ plan2
 <img width="789" alt="plan2-2" src="https://cloud.githubusercontent.com/assets/22774491/25795183/119c058e-3389-11e7-9c06-61026a595e93.png">
 
 ## Circuit diagram
-src="https://cloud.githubusercontent.com/assets/22774491/25797321/8b96cc36-3391-11e7-8dd3-ed0b4d84141c.png">
+
+<img width="850" alt="friting file" src="https://cloud.githubusercontent.com/assets/22774491/25797309/7a6487d2-3391-11e7-875b-d7066c988888.png">
 
 ## prototype final result
 I used 6 photocells and 6 LEDs to set up on a city landscape.
