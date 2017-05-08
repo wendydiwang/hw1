@@ -285,7 +285,7 @@ void shine() {
   }
 }
 
-// song1 setup
+// song1 setup (yann tiersen La valse d'Amelie Piano right hand part 1)
 void Song1() {
   
   out.playNote( 0.0, 1.2, new SineInstrument( Frequency.ofPitch( "D6" ).asHz() ) );
@@ -304,6 +304,8 @@ void Song1() {
   
   delay(500);
 }
+
+//yann tiersen La valse d'Amelie Piano right hand part 2
 
 void Song2() {
   out.playNote( 0.0, 1.2, new SineInstrument( Frequency.ofPitch( "D6" ).asHz() ) );
@@ -326,6 +328,8 @@ void Song2() {
   delay(500);
 }
 
+
+//yann tiersen La valse d'Amelie Piano right hand part 3
 void Song3() {
 
   out.playNote( 0.0, 0.9, new SineInstrument( Frequency.ofPitch( "C6" ).asHz() ) );
@@ -340,6 +344,7 @@ void Song3() {
   delay(500);
 }
 
+//yann tiersen La valse d'Amelie Piano right hand part 4
 void Song4() {
   out.playNote(0.0, 1.0, new SineInstrument( Frequency.ofPitch( "C6" ).asHz() ) );
   out.playNote( 0.0, 1.0, new SineInstrument( Frequency.ofPitch( "C5" ).asHz() ) );
@@ -357,7 +362,7 @@ void Song4() {
 }
 
 
-
+// yann tiersen La valse d'Amelie Piano leftt hand part 1
 void Rhythm1() {
   out.playNote( 0.0, 1.2, new SineInstrument( Frequency.ofPitch( "D4" ).asHz() ) );
 
@@ -367,6 +372,7 @@ void Rhythm1() {
   delay(500);
 }
 
+// yann tiersen La valse d'Amelie Piano leftt hand part 2
 void Rhythm2() {
 
   out.playNote( 0.0, 1.2, new SineInstrument( Frequency.ofPitch( "A3" ).asHz() ) );
@@ -377,6 +383,7 @@ void Rhythm2() {
   delay(500);
 }
 
+// yann tiersen La valse d'Amelie Piano leftt hand part 3
 void Rhythm3() {
   out.playNote( 0.0, 0.9, new SineInstrument( Frequency.ofPitch( "F4" ).asHz() ) );
 
@@ -385,6 +392,7 @@ void Rhythm3() {
   delay(500);
 }
 
+// yann tiersen La valse d'Amelie Piano leftt hand part 4
 void Rhythm4() {
   out.playNote( 0.0, 1.2, new SineInstrument( Frequency.ofPitch( "C4" ).asHz() ) );
 
@@ -394,6 +402,7 @@ void Rhythm4() {
   delay(500);
 }
 
+// cloud atlas Piano piece left hand part 1
 void CPL1(){
 
   out.playNote( 0.0, 2.0, new SineInstrument(  Frequency.ofPitch( "C3" ).asHz() ) );
@@ -433,6 +442,7 @@ void CPL1(){
   delay(1500);
 }
 
+// cloud atlas Piano piece right hand part 1
 void CPR1() {
   out.playNote(0.0, 1.0, new SineInstrument(  Frequency.ofPitch( "E5" ).asHz() ) );
   out.playNote(0.0, 1.0, new SineInstrument(  Frequency.ofPitch( "E4" ).asHz() ) );
@@ -476,6 +486,7 @@ void CPR1() {
   delay(1500);
 }
 
+// cloud atlas Piano piece right hand part 2
 void CPR2() {
   out.playNote(0.0, 1.0, new SineInstrument(  Frequency.ofPitch( "A5" ).asHz() ) );
   out.playNote(0.0, 1.0, new SineInstrument(  Frequency.ofPitch( "A6" ).asHz() ) );
@@ -516,7 +527,7 @@ void CPR2() {
   delay(1500);
 }
 
-
+// cloud atlas Piano piece right hand part 3
 void CPR3(){
 
   out.playNote( 0.9, 1.0, new SineInstrument(  Frequency.ofPitch( "G5" ).asHz() ) );
@@ -540,6 +551,7 @@ void CPR3(){
   delay(1500);
 }
 
+// a rhythm movements with Chords
 void R1() {
   out.playNote( 0.0, 2.0, new RInstrument(  Frequency.ofPitch( "A2" ).asHz() ) );
   out.playNote( 0.0, 2.0, new RInstrument(  Frequency.ofPitch( "C3" ).asHz() ) );
@@ -632,6 +644,7 @@ void R1() {
   delay(1000);
 }
 
+// cloud atlas Tube piece right hand part 1
 void CT1() {
   out.playNote(0.0, 1.0, new TubeInstrument(  Frequency.ofPitch( "E3" ).asHz() ) );
   out.playNote(0.0, 1.0, new TubeInstrument(  Frequency.ofPitch( "E4" ).asHz() ) );
@@ -675,6 +688,7 @@ void CT1() {
   delay(1000);
 }
 
+// cloud atlas Tube piece right hand part 2
 void CT2() {
   out.playNote(0.0, 1.0, new TubeInstrument(  Frequency.ofPitch( "A5" ).asHz() ) );
   out.playNote(0.0, 1.0, new TubeInstrument(  Frequency.ofPitch( "A6" ).asHz() ) );
