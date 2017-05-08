@@ -1,10 +1,19 @@
 ## prototype plan
+plan1
 <img width="807" alt="plan1-1" src="https://cloud.githubusercontent.com/assets/22774491/25795180/103f8116-3389-11e7-9003-b3b0c60b12e3.png">
 <img width="832" alt="plan1-2" src="https://cloud.githubusercontent.com/assets/22774491/25795181/11780bac-3389-11e7-9b06-4f3121f419f6.png">
+plan2
 <img width="793" alt="plan2-1" src="https://cloud.githubusercontent.com/assets/22774491/25795182/119abd6e-3389-11e7-818c-7a47c750b862.png">
 <img width="789" alt="plan2-2" src="https://cloud.githubusercontent.com/assets/22774491/25795183/119c058e-3389-11e7-9c06-61026a595e93.png">
 
+## Circuit diagram
+src="https://cloud.githubusercontent.com/assets/22774491/25797321/8b96cc36-3391-11e7-8dd3-ed0b4d84141c.png">
+
 ## prototype final result
+I used 6 photocells and 6 LEDs to set up on a city landscape.
+Each photocell controls one LED, I hid those photocells in a gap of my path, once there something (a small car) passing by the path
+And it will cover light from the top of my photocell, the light that photocell gets will be less and led to bright up the light that it controls.
+//
 ![final result](https://cloud.githubusercontent.com/assets/22774491/25795283/88ba8906-3389-11e7-8c2b-9ce86d2e3439.JPG)
 ![minimal prototype](https://cloud.githubusercontent.com/assets/22774491/25795285/8c3eb78c-3389-11e7-81f8-13e198d83e5c.JPG)
 
