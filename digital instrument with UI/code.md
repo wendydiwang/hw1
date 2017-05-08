@@ -89,11 +89,11 @@ void loop() {
   }
 
 
-##processing code:
-####part1 :
+## processing code:
+#### part1 :
 
 //original visual code by Raven Kwok aka Guo, Ruiwen, Jerome Herr, p5art.tumblr.com, modified by Wendy Di Wang
-//arduino//
+
 
 Serial myPort;        // The serial port
 int xPos = 100;         // horizontal position of the graph
@@ -111,14 +111,15 @@ ArrayList<Particle> pts;
 boolean onPressed;
 color[] palette = { 
   #001ABF, #0095FF, #0017A6,  #EF00DE,   #A200FF, #5700B0, #007EF5, #FF00FF, #00E7FF, #FF00BC, #3700BC,  #8400ff, #5400ff, #0060ff
-}; 
+}; // set up colors of thoes floating dots
 
 void setup() {
   fullScreen();
   frameRate(30);
 
   pts = new ArrayList<Particle>();
-
+  
+// get data from arduino
   myPort = new Serial(this, Serial.list()[1], 9600);
   myPort.bufferUntil('\n');
   minim = new Minim(this);
@@ -126,22 +127,22 @@ void setup() {
 }
 
 void draw() {
-  println(distance1);
+  println(distance1); // print the distance from each sensor
   println(distance2);
   println(distance3);
   println(distance4);
   background(0);
 
-  if (distance1>0 && distance1<15)
+  if (distance1>0 && distance1<15)// when something is in front of the sensor 1 from 0 to 15 cms, paly song1
   {
-    print("Song1\t");
+    print("Song1\t"); // show song1 is paly in the monitor
    Song1();
 
     smooth();
   }
 
 
-  if (distance1>15 && distance1<30)
+  if (distance1>15 && distance1<30)// when something is in front of the sensor 1 from 15 to 30 cms, paly song2
   {
     print("Song2\t");
    Song2();
@@ -248,6 +249,8 @@ void draw() {
     smooth();
   }
   
+  
+  // active the flating dots when something is in front of either of thoes sensor less than 2.8 meters.
   if (distance1>0 && distance1<280 || distance2>0 && distance2<280 || distance3>0 && distance3<280 || distance4>0 && distance4<280)
   {
     onPressed = true;
@@ -259,15 +262,7 @@ void draw() {
   shine();
 }
 
-//void mousePressed() {
-//  onPressed = true;
-//}
-
-//void mouseReleased() {
-//  onPressed = false;
-//}
-
-
+//floating dots setup
 void shine() {
   if (onPressed) {
     for (int i=0; i<10; i++) {
@@ -290,9 +285,9 @@ void shine() {
   }
 }
 
+// song1 setup
 void Song1() {
-  // pause time when adding a bunch of notes at once
-  //out.pauseNotes();
+  
   out.playNote( 0.0, 1.2, new SineInstrument( Frequency.ofPitch( "D6" ).asHz() ) );
   out.playNote( 0.0, 1.2, new SineInstrument( Frequency.ofPitch( "D5" ).asHz() ) );
 
@@ -306,7 +301,7 @@ void Song1() {
   out.playNote( 2.0, 1.0, new SineInstrument( Frequency.ofPitch( "A5" ).asHz() ) );
   out.playNote( 2.0, 1.0, new SineInstrument( Frequency.ofPitch( "A4" ).asHz() ) );
   // resume time after a bunch of notes are added at once
-  //out.resumeNotes();
+  
   delay(500);
 }
 
@@ -732,6 +727,8 @@ import ddf.minim.ugens.*;
 import ddf.minim.signals.*;
 import processing.sound.*;
 
+
+//the class of piano effects:
 class SineInstrument implements Instrument
 {
   Oscil wave;
@@ -782,6 +779,8 @@ class RInstrument implements Instrument
   }
 }
 
+
+//the class of tube instrument effects:
 class TubeInstrument implements Instrument
 {
   Oscil wave;
@@ -824,7 +823,7 @@ void serialEvent (Serial myPort) {
 }
 
 
-
+//the class of floating dots effects:
 
 class Particle {
   PVector loc, vel, acc;
@@ -832,7 +831,7 @@ class Particle {
   boolean dead;
   float alpha, weight, weightRange, decay, xOffset, yOffset;
   int c;
-
+//location 
   Particle(float x, float y, float _xOffset, float _yOffset) {
     loc = new PVector(x, y);
 
@@ -869,7 +868,7 @@ class Particle {
     acc.add(dir);
     acc.mult(mag);
 
-    float randDegrees = random(360);
+    float randDegrees = random(360);// where does those dots float to
     PVector randV = new PVector(cos(radians(randDegrees)), sin(radians(randDegrees)));
     randV.mult(0.001);
     acc.add(randV);
@@ -882,8 +881,8 @@ class Particle {
 
   void display() {
 
-    strokeWeight(weight+1.5+5);
-    stroke(palette[c], alpha/5);
+    strokeWeight(weight+1.5+5);// size of the glow
+    stroke(palette[c], alpha/5);//color and transparency of the dots
     point(loc.x, loc.y);
 
     strokeWeight(weight*.5+2);
