@@ -1,0 +1,79 @@
+
+ 
+int photocellPin1 = A0;     
+int photocellPin2 = A1;
+int photocellPin3 = A2;
+int photocellPin4 = A3;
+int photocellPin5 = A4;
+int photocellPin6 = A5;
+ 
+int photocellReading1;    
+int photocellReading2; 
+int photocellReading3; 
+int photocellReading4; 
+int photocellReading5; 
+int photocellReading6; 
+
+int LEDpin1 = 11;
+int LEDpin2 = 10;   
+int LEDpin3 = 9;
+int LEDpin4 = 6;  
+int LEDpin5 = 5;
+int LEDpin6 = 3;  
+       
+int LEDbrightness1;  
+int LEDbrightness2; 
+int LEDbrightness3;  
+int LEDbrightness4; 
+int LEDbrightness5;  
+int LEDbrightness6; 
+
+void setup(void) {
+  Serial.begin(9600);   
+}
+ 
+void loop(void) {
+  photocellReading1 = analogRead(photocellPin1);  
+  Serial.print("Analog reading1 = ");
+  Serial.print(photocellReading1);     // the raw analog reading
+  photocellReading1 = 1023 - photocellReading1;
+  LEDbrightness1 = map(photocellReading1, 700, 1000, 0, 255);
+  analogWrite(LEDpin1, LEDbrightness1);
+
+ photocellReading2 = analogRead(photocellPin2);  
+  Serial.print("\tAnalog reading2 = ");
+  Serial.println(photocellReading2);     // the raw analog reading
+  photocellReading2 = 1023 - photocellReading2;
+  LEDbrightness2 = map(photocellReading2, 650, 1000, 0, 255); 
+  analogWrite(LEDpin2, LEDbrightness2);
+
+   photocellReading3 = analogRead(photocellPin3);  
+  Serial.print("\tAnalog reading3 = ");
+  Serial.println(photocellReading3);     // the raw analog reading
+  photocellReading3 = 1023 - photocellReading3;
+  LEDbrightness3 = map(photocellReading3, 700, 1000, 0, 255); 
+  analogWrite(LEDpin3, LEDbrightness3);
+
+   photocellReading4 = analogRead(photocellPin4);  
+  Serial.print("\tAnalog reading4 = ");
+  Serial.println(photocellReading4);     // the raw analog reading
+  photocellReading4 = 1023 - photocellReading4;
+  LEDbrightness4 = map(photocellReading4, 780, 1000, 0, 255); 
+  analogWrite(LEDpin4, LEDbrightness4);
+
+   photocellReading5 = analogRead(photocellPin5);  
+  Serial.print("\tAnalog reading5 = ");
+  Serial.println(photocellReading5);     // the raw analog reading
+  photocellReading5 = 1023 - photocellReading5;
+  LEDbrightness5 = map(photocellReading5, 700, 1000, 0, 255); 
+  analogWrite(LEDpin5, LEDbrightness5);
+
+   photocellReading6 = analogRead(photocellPin6);  
+  Serial.print("\tAnalog reading6 = ");
+  Serial.println(photocellReading6);     // the raw analog reading
+  photocellReading6 = 1023 - photocellReading2;
+  LEDbrightness6 = map(photocellReading6, 700, 1000, 0, 255); 
+  analogWrite(LEDpin6, LEDbrightness6);
+ 
+  delay(100);
+}
