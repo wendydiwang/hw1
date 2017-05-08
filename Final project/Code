@@ -1,12 +1,19 @@
+// this is the code in Arduino for my final project
+I used 6 photocells and 6 LEDs to set up on a city landscape.
+Each photocell controls one LED, I hid those photocells in a gap of my path, once there something (a small car) passing by the path
+And it will cover light from the top of my photocell, the light that photocell gets will be less and led to bright up the light that it controls.//
 
- 
+
+// set up 6 photocell pins 
+
 int photocellPin1 = A0;     
 int photocellPin2 = A1;
 int photocellPin3 = A2;
 int photocellPin4 = A3;
 int photocellPin5 = A4;
 int photocellPin6 = A5;
- 
+
+// set up photocells Reading
 int photocellReading1;    
 int photocellReading2; 
 int photocellReading3; 
@@ -14,13 +21,15 @@ int photocellReading4;
 int photocellReading5; 
 int photocellReading6; 
 
+// set up 6 LED pins 
 int LEDpin1 = 11;
 int LEDpin2 = 10;   
 int LEDpin3 = 9;
 int LEDpin4 = 6;  
 int LEDpin5 = 5;
 int LEDpin6 = 3;  
-       
+ 
+ // set up LED brightness's name
 int LEDbrightness1;  
 int LEDbrightness2; 
 int LEDbrightness3;  
@@ -33,47 +42,44 @@ void setup(void) {
 }
  
 void loop(void) {
-  photocellReading1 = analogRead(photocellPin1);  
-  Serial.print("Analog reading1 = ");
+
+  photocellReading1 = analogRead(photocellPin1);  //set up photocell 1 to analog read
+  Serial.print("Analog reading1 = "); // print the data that photocell 1 gets
   Serial.print(photocellReading1);     // the raw analog reading
-  photocellReading1 = 1023 - photocellReading1;
-  LEDbrightness1 = map(photocellReading1, 700, 1000, 0, 255);
-  analogWrite(LEDpin1, LEDbrightness1);
+  LEDbrightness1 = map(photocellReading1, 700, 1000, 255, 5);  // map the data from photocell to LED brightness level
+  analogWrite(LEDpin1, LEDbrightness1);//analog write the LED's brightness
+
+//next 5 group of code are basically the same with the code above, I just wrote them separately with different photocells and leds
 
  photocellReading2 = analogRead(photocellPin2);  
   Serial.print("\tAnalog reading2 = ");
-  Serial.println(photocellReading2);     // the raw analog reading
-  photocellReading2 = 1023 - photocellReading2;
-  LEDbrightness2 = map(photocellReading2, 650, 1000, 0, 255); 
+  Serial.println(photocellReading2);     
+  LEDbrightness2 = map(photocellReading2, 650, 1000, 255,5); 
   analogWrite(LEDpin2, LEDbrightness2);
 
    photocellReading3 = analogRead(photocellPin3);  
   Serial.print("\tAnalog reading3 = ");
-  Serial.println(photocellReading3);     // the raw analog reading
-  photocellReading3 = 1023 - photocellReading3;
-  LEDbrightness3 = map(photocellReading3, 700, 1000, 0, 255); 
+  Serial.println(photocellReading3);    
+  LEDbrightness3 = map(photocellReading3, 700, 1000, 255,5); 
   analogWrite(LEDpin3, LEDbrightness3);
 
    photocellReading4 = analogRead(photocellPin4);  
   Serial.print("\tAnalog reading4 = ");
-  Serial.println(photocellReading4);     // the raw analog reading
-  photocellReading4 = 1023 - photocellReading4;
-  LEDbrightness4 = map(photocellReading4, 780, 1000, 0, 255); 
+  Serial.println(photocellReading4);    
+  LEDbrightness4 = map(photocellReading4, 780, 1000, 255,5); 
   analogWrite(LEDpin4, LEDbrightness4);
 
    photocellReading5 = analogRead(photocellPin5);  
   Serial.print("\tAnalog reading5 = ");
-  Serial.println(photocellReading5);     // the raw analog reading
-  photocellReading5 = 1023 - photocellReading5;
-  LEDbrightness5 = map(photocellReading5, 700, 1000, 0, 255); 
+  Serial.println(photocellReading5);    
+  LEDbrightness5 = map(photocellReading5, 700, 1000, 255,5); 
   analogWrite(LEDpin5, LEDbrightness5);
 
    photocellReading6 = analogRead(photocellPin6);  
   Serial.print("\tAnalog reading6 = ");
-  Serial.println(photocellReading6);     // the raw analog reading
-  photocellReading6 = 1023 - photocellReading2;
-  LEDbrightness6 = map(photocellReading6, 700, 1000, 0, 255); 
+  Serial.println(photocellReading6);     
+  LEDbrightness6 = map(photocellReading6, 700, 1023, 255,5); 
   analogWrite(LEDpin6, LEDbrightness6);
  
-  delay(100);
+  delay(10);
 }
